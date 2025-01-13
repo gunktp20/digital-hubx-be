@@ -1,0 +1,57 @@
+basePath: /api
+definitions:
+  dto.AuthenticationReq:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  dto.AuthenticationRes:
+    properties:
+      access_token:
+        type: string
+      email:
+        type: string
+      user_id:
+        type: string
+    required:
+    - access_token
+    - email
+    - user_id
+    type: object
+host: localhost:3000
+info:
+  contact:
+    email: support@example.com
+    name: API Support
+  description: digital hubx api
+  title: digital-hubx
+  version: "1.0"
+paths:
+  /auth/login:
+    post:
+      consumes:
+      - application/json
+      description: This endpoint allows you to authenticate
+      parameters:
+      - description: Authentication detail
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AuthenticationReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/dto.AuthenticationRes'
+      summary: Authenticate
+      tags:
+      - Auth
+swagger: "2.0"

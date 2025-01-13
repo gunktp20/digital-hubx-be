@@ -1,0 +1,21 @@
+server:
+  port: 3000
+  
+db:
+  host: localhost
+  port: 5433
+  user: postgres
+  password: password
+  dbname: hubx
+  sslmode: disable
+  timezone: Asia/Bangkok
+
+jwt:
+  access_secret_key: access_secret_key
+  refresh_secret_key: refresh_secret_key
+
+bucket:
+  access_key: access_key
+  secret_access_key: secret_access_key
+  bucket_name: bucket_name
+  bucket_region: bucket_region
